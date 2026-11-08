@@ -1,10 +1,7 @@
-from src.config_libraries import required, check, check_missing, install_missing
+from src.config_libraries import config_libraries
 
 def main():
-    required()
-    check()
-    check_missing()
-    install_missing()
+    config_libraries() #Everything from file config_libraries.py
 
 if __name__ == "__main__":
     main()
