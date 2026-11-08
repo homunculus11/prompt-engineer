@@ -29,10 +29,15 @@ def config_libraries():
             if library not in installed_libraries:
                 missing_libraries.append(library)
         return len(missing_libraries)
+    
+    RED = "\033[31m"
+    GREEN = "\033[32m"
+    YELLOW = "\033[33m"
+    WHITE = "\033[0m"
 
     def install_missing():
         if not missing_libraries:
-            print(f"All libraries are already downloaded {len(required_libraries)}/{len(required_libraries)}. Proceeding back to the program.")
+            print(f"{YELLOW}All libraries are already downloaded {len(required_libraries)}/{len(required_libraries)}. Proceeding back to the program.{WHITE}")
         
         else:
             json_file = open("config/settings.json", "r", encoding="utf-8")
@@ -44,14 +49,19 @@ def config_libraries():
                     __import__(library)
                     data["settings"]["modules"][library] = True
                 except ImportError:
-                    print(f"[Error] Library {library} missing.")
-                    print(f"Installing library {library} now...")
+                    print(f"{RED}[Error] Library {library} missing.")
+                    print(f"{YELLOW}Installing library {library} now...")
                     try:
                         subprocess.check_call([sys.executable, "-m", "pip", "install", library])
-                        print(f"[Success] Library {library} was succesfully installed.")
+                        print(f"{GREEN}[Success] Library {library} was succesfully installed.{WHITE}")
                     except subprocess.CalledProcessError as error_description:
-                        print(f"[Error] Library {library} failed to install. Error description: {error_description}")
+                        print(f"{RED}[Error] Library {library} failed to install. Error description: {error_description}{WHITE}")
 
             json_file = open("config/settings.json", "w", encoding="utf-8")
             json.dump(data, json_file, indent=4)
             json_file.close()
+
+    required()
+    check()
+    check_missing()
+    install_missing()
