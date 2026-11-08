@@ -3,6 +3,8 @@
         "modules": {
             "pyperclip": false,
             "colorama": false
-        }
+        },
+        "save_prompts": false
+
     }
 }
