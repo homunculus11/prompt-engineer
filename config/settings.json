@@ -1,7 +1,8 @@
 {
     "settings": {
         "modules": {
-            "pyperclip" : false
+            "pyperclip" : false,
+            "colorama" : false
         }
     }
 }
