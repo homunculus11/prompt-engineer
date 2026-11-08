@@ -1,0 +1,7 @@
+{
+    "settings": {
+        "modules": {
+            "pyperclip" : 0
+        }
+    }
+}
