@@ -4,7 +4,7 @@
             "pyperclip": false,
             "colorama": false
         },
-        "save_prompts": false
-
+        "save_prompts": false,
+        "prompt_format" : ".txt"
     }
 }

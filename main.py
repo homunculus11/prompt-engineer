@@ -9,12 +9,14 @@ def main():
     active = True
     line = "======================================================"
     while active:
+        index = 1
         print(f"{Fore.YELLOW}{line}")
-        print(f"{Fore.YELLOW}1. Generate prompt")
-        print(f"{Fore.YELLOW}2. Load prompt template")
-        print(f"{Fore.YELLOW}3. Change settings")
-        print(f"{Fore.YELLOW}0. Exit program")
-        print(f"{Fore.YELLOW}{line}")
+        print(f"{Fore.YELLOW}{index} Configure Project Path"); index += 1
+        print(f"{Fore.YELLOW}{index} Generate prompt"); index += 1
+        print(f"{Fore.YELLOW}{index} Load prompt template"); index += 1
+        print(f"{Fore.YELLOW}{index} Change settings"); index += 1
+        print(f"{Fore.YELLOW}0. Exit program"); index += 1
+        print(f"{Fore.YELLOW}{line}"); index += 1
 
         user_choice = input("Enter choice: ")
 
