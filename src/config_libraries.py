@@ -7,7 +7,7 @@ installed_libraries = []
 missing_libraries = []
 
 def required():
-    json_file = open("../config/settings.json", "r", encoding="utf-8")
+    json_file = open("/config/settings.json", "r", encoding="utf-8")
     data = json.load(json_file)
     json_file.close()
 
@@ -15,7 +15,7 @@ def required():
         required_libraries.append(library)
 
 def check():
-    json_file = open("../config/settings.json", "r", encoding="utf-8")
+    json_file = open("/config/settings.json", "r", encoding="utf-8")
     data = json.load(json_file)
     json_file.close()
 
@@ -34,7 +34,7 @@ def install_missing():
         print(f"All libraries are already downloaded {len(required_libraries)}/{len(required_libraries)}. Proceeding back to the program.")
     
     else:
-        json_file = open("../config/settings.json", "r", encoding="utf-8")
+        json_file = open("/config/settings.json", "r", encoding="utf-8")
         data = json.load(json_file)
         json_file.close()
 
@@ -51,6 +51,6 @@ def install_missing():
                 except subprocess.CalledProcessError as error_description:
                     print(f"[Error] Library {library} failed to install. Error description: {error_description}")
 
-        json_file = open("../config/settings.json", "w", encoding="utf-8")
+        json_file = open("/config/settings.json", "w", encoding="utf-8")
         json.dump(data, json_file, indent=4)
         json_file.close()
