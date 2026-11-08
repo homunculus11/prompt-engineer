@@ -1,2 +1,3 @@
 config/my_settings.json
 src/__pycache__/
+config_libraries.py
