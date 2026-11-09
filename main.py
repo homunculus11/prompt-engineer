@@ -1,6 +1,6 @@
 import json
 from src.config import config_libraries
-from src.helpers import spaces
+from src.helpers import spaces, config_path
 
 def main():
     config_libraries() # Everything from file config.py
@@ -33,7 +33,7 @@ def main():
 
         match user_choice:
             case "1":
-                pass
+                config_path()
             case "2":
                 pass
             case "3":

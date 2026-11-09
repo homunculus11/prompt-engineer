@@ -4,11 +4,11 @@
             "pyperclip": false,
             "colorama": false
         },
-        "path" : "none",
+        "path": "none",
         "save_prompts": false,
-        "prompt_format" : ".txt",
-        "background_color" : "WHITE",
-        "text_color" : "GREEN",
-        "text_brightness" : "DIM"
+        "prompt_format": ".txt",
+        "background_color": "WHITE",
+        "text_color": "GREEN",
+        "text_brightness": "DIM"
     }
 }
