@@ -1,2 +1,2 @@
-# generate_prompt.py
-
+def generate_prompt():
+    pass

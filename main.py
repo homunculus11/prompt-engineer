@@ -1,7 +1,8 @@
-from src.config_libraries import config_libraries
+from src.config import config_libraries
+from src.helpers import spaces
 
 def main():
-    config_libraries() #Everything from file config_libraries.py
+    config_libraries() #Everything from file config.py
     
     from colorama import init, Fore, Back, Style
     init(autoreset=True)
@@ -9,14 +10,14 @@ def main():
     active = True
     line = "======================================================"
     while active:
-        index = 1
-        print(f"{Fore.YELLOW}{line}")
-        print(f"{Fore.YELLOW}{index} Configure Project Path"); index += 1
-        print(f"{Fore.YELLOW}{index} Generate prompt"); index += 1
-        print(f"{Fore.YELLOW}{index} Load prompt template"); index += 1
-        print(f"{Fore.YELLOW}{index} Change settings"); index += 1
-        print(f"{Fore.YELLOW}0. Exit program"); index += 1
-        print(f"{Fore.YELLOW}{line}"); index += 1
+        
+        index = 1;                       print(f"{Fore.BLACK}{Back.CYAN}{line}")
+        text = "Configure Project Path"; print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Generate prompt";        print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Load prompt template";   print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Change settings";        print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Exit program";           print(f"{Fore.BLACK}{Back.CYAN}0. {text}{spaces(line, text, 3)}");       index += 1
+        ...;                             print(f"{Fore.BLACK}{Back.CYAN}{line}");                                 index += 1
 
         user_choice = input("Enter choice: ")
 
