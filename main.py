@@ -1,6 +1,7 @@
 import json
 from src.config import config_libraries
 from src.helpers import spaces, config_path
+from src.modify_settings import settings_menu
 
 def main():
     config_libraries() # Everything from file config.py
@@ -40,6 +41,8 @@ def main():
                 pass
             case "3":
                 pass
+            case "4":
+                settings_menu()
             case "Q" | "q":
                 active = False
             case _:
