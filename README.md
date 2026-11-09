@@ -8,3 +8,8 @@ If Python is installed, it will return the Python Environment's version number, 
 ```bash
 Python 3.15.2
 ```
+
+## To run this project just type:
+```bash
+python main.py
+```

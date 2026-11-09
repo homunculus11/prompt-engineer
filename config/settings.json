@@ -1,12 +1,12 @@
 {
     "settings": {
         "modules": {
-            "pyperclip": false,
-            "colorama": false
+            "pyperclip": true,
+            "colorama": true
         },
         "path": "none",
         "save_prompts": false,
-        "prompt_format": ".txt",
+        "prompt_format": ".md",
         "background_color": "WHITE",
         "text_color": "GREEN",
         "text_brightness": "DIM"
