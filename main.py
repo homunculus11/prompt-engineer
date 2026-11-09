@@ -18,6 +18,8 @@ def main():
         color_settings = (getattr(Back, data["settings"]["background_color"]) + getattr(Fore, data["settings"]["text_color"]) + getattr(Style, data["settings"]["text_brightness"]))
 
         # Output (can be done better, but I'm too lazy)
+        ...;                             print(f"   {color_settings}   {line}   ")
+        text = "Main Menu";              print(f"   {color_settings}{spaces(line, text, -6, 2)}{text}{spaces(line, text, -7, 2)}")
         index = 1;                       print(f"   {color_settings}   {line}   ")
         text = " ";                      print(f"   {color_settings}   {text}{spaces(line, text, 0)}   "); # Newline
         text = "Configure Project Path"; print(f"   {color_settings}   {index}. {text}{spaces(line, text, 3)}   "); index += 1

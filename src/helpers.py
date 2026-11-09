@@ -1,7 +1,7 @@
 import json
 
-def spaces(line, text, bonus_spaces):
-    total_spaces = len(line) - len(text) - bonus_spaces
+def spaces(line, text, bonus_spaces, divider=1):
+    total_spaces = (len(line) - len(text) - bonus_spaces) // divider
     return " " * total_spaces
 
 def config_path():
