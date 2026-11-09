@@ -7,7 +7,8 @@
         "path" : "none",
         "save_prompts": false,
         "prompt_format" : ".txt",
-        "background_color" : "CYAN",
-        "text_color" : "BLACK"
+        "background_color" : "WHITE",
+        "text_color" : "GREEN",
+        "text_brightness" : "DIM"
     }
 }

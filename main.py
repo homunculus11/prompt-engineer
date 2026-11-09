@@ -1,23 +1,30 @@
+import json
 from src.config import config_libraries
 from src.helpers import spaces
 
 def main():
-    config_libraries() #Everything from file config.py
+    config_libraries() # Everything from file config.py
     
     from colorama import init, Fore, Back, Style
     init(autoreset=True)
 
     active = True
-    line = "======================================================"
+    line = "═" * 40
     while active:
-        
-        index = 1;                       print(f"{Fore.BLACK}{Back.CYAN}{line}")
-        text = "Configure Project Path"; print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
-        text = "Generate prompt";        print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
-        text = "Load prompt template";   print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
-        text = "Change settings";        print(f"{Fore.BLACK}{Back.CYAN}{index}. {text}{spaces(line, text, 3)}"); index += 1
-        text = "Exit program";           print(f"{Fore.BLACK}{Back.CYAN}0. {text}{spaces(line, text, 3)}");       index += 1
-        ...;                             print(f"{Fore.BLACK}{Back.CYAN}{line}");                                 index += 1
+        # Getting the terminal interface colors straight from the .json file (ignore the messy code line color_settings)
+        json_file = open("config/settings.json", "r", encoding="utf-8")
+        data = json.load(json_file)
+        json_file.close()
+        color_settings = (getattr(Back, data["settings"]["background_color"]) + getattr(Fore, data["settings"]["text_color"]) + getattr(Style, data["settings"]["text_brightness"]))
+
+        # Output (can be done better, but I'm too lazy)
+        index = 1;                       print(f"{color_settings}{line}")
+        text = "Configure Project Path"; print(f"{color_settings}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Generate prompt";        print(f"{color_settings}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Load prompt template";   print(f"{color_settings}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Change settings";        print(f"{color_settings}{index}. {text}{spaces(line, text, 3)}"); index += 1
+        text = "Exit program";           print(f"{color_settings}Q. {text}{spaces(line, text, 3)}");       index += 1
+        ...;                             print(f"{color_settings}{line}");                                 index += 1
 
         user_choice = input("Enter choice: ")
 
@@ -28,7 +35,7 @@ def main():
                 pass
             case "3":
                 pass
-            case "0":
+            case "Q" | "q":
                 active = False
             case _:
                 print(f"{Fore.RED}[Error] You didn't select an available option. Try again.")
